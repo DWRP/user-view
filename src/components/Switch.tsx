@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react'
-import { ButtonSwitch } from './styled/ButtonSwitch'
 import type { ButtonProps } from 'react-aria-components'
+import { ButtonSwitch } from './styled/ButtonSwitch'
 
 export default function Switch({
   children,
