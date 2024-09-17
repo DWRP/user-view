@@ -42,9 +42,9 @@
   },
   "overrides": [
     {
-      "include": ["*.json"],
+      "include": ["*.js", "*.ts", "*.jsx", "*.tsx"],
       "formatter": {
-        "indentWidth": 2
+        "lineEnding": "crlf"
       }
     }
   ]
