@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 export const AppRouter = () => {
-  const { lang } = useAppStore()
+  const { lang, theme, setTheme } = useAppStore()
 
   const {
     i18n: { language, changeLanguage },
@@ -14,20 +14,27 @@ export const AppRouter = () => {
   useEffect(() => {
     let isMounted = true
 
-    const updateLanguage = async () => {
+    const updateLanguageAnTheme = async () => {
       if (isMounted) {
         if (lang && lang !== language) {
           await changeLanguage(lang)
         }
+
+        if (
+          theme &&
+          theme !== document.documentElement.getAttribute('data-theme')
+        ) {
+          setTheme(theme)
+        }
       }
     }
 
-    updateLanguage()
+    updateLanguageAnTheme()
 
     return () => {
       isMounted = false
     }
-  }, [lang, language, changeLanguage])
+  }, [lang, language, theme, setTheme, changeLanguage])
   return (
     <Router>
       <Routes>

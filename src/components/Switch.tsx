@@ -1,4 +1,5 @@
 import type { PropsWithChildren } from 'react'
+import type { ButtonProps } from 'react-aria-components'
 import { ButtonSwitch } from './styled/ButtonSwitch'
 
 export default function Switch({
@@ -6,17 +7,16 @@ export default function Switch({
   isSelected,
   onChange,
   id,
-}: PropsWithChildren<{
-  isSelected: boolean
-  onChange: (selected: boolean) => void
-  id: string
-}>) {
+  ...props
+}: PropsWithChildren<
+  {
+    isSelected: boolean
+    onChange: (selected: boolean) => void
+    id: string
+  } & ButtonProps
+>) {
   return (
-    <ButtonSwitch
-      id={id}
-      onPress={() => onChange(!isSelected)}
-      aria-label="toggle table view"
-    >
+    <ButtonSwitch id={id} onPress={() => onChange(!isSelected)} {...props}>
       {children}
     </ButtonSwitch>
   )

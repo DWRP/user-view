@@ -49,13 +49,18 @@ describe('Switch Component', () => {
 
   test('has the correct aria-label attribute', () => {
     render(
-      <Switch isSelected={false} onChange={mockOnChange} id="switch-id">
+      <Switch
+        isSelected={false}
+        onChange={mockOnChange}
+        id="switch-id"
+        aria-label="toggle table button"
+      >
         Toggle View
       </Switch>,
     )
     expect(screen.getByRole('button')).toHaveAttribute(
       'aria-label',
-      'toggle table view',
+      'toggle table button',
     )
   })
 })
