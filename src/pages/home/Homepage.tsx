@@ -55,9 +55,10 @@ export const Homepage = () => {
             id="view-toggle"
             isSelected={isCardView}
             onChange={setIsCardView}
-            aria-label="toggle table button"
+            aria-labelledby="view-toggle-label"
+            aria-label="toggle table label"
           >
-            <Label htmlFor="view-toggle" aria-label="toggle table label">
+            <Label id="view-toggle-label" htmlFor="view-toggle">
               {isCardView ? t('homepage.cardView') : t('homepage.tableView')}
             </Label>
           </Switch>

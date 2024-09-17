@@ -9,11 +9,11 @@ import type { DefaultTheme } from 'styled-components'
 
 expect.extend(toHaveNoViolations)
 
-const renderLanguageComponent = (theme: DefaultTheme) => {
+const renderLanguageComponent = (theme: DefaultTheme, isVisible = false) => {
   return render(
     <Language.Select aria-label="Language selection">
       <Language.Button>Select language</Language.Button>
-      <Language.Popover aria-label="Language popover">
+      <Language.Popover aria-label="Language popover" isVisible={isVisible}>
         <ListBox aria-label="List of languages">
           <Language.ListBoxItem id="pt-BR">PT</Language.ListBoxItem>
           <Language.ListBoxItem id="en">EN</Language.ListBoxItem>
@@ -85,7 +85,7 @@ describe('Language Component', () => {
   ])(
     'should apply correct styles to PopoverStyled with %s theme',
     (_, theme) => {
-      renderLanguageComponent(theme)
+      renderLanguageComponent(theme, true)
 
       const selectButton = screen.getByRole('button', {
         name: /language selection/i,
