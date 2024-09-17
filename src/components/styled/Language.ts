@@ -30,7 +30,7 @@ const ButtonStyled = styled(Button)`
   }
 `
 
-const PopoverStyled = styled(Popover)`
+const PopoverStyled = styled(Popover)<{ isVisible: boolean }>`
   position: absolute;
   z-index: 1;
   min-width: 52px;
@@ -40,6 +40,12 @@ const PopoverStyled = styled(Popover)`
   border-radius: 0.375rem;
   box-shadow: ${({ theme }) => theme.boxShadow};
   margin-top: 0.5rem;
+
+  display: ${({ isVisible }) => (isVisible ? 'block' : 'none')};
+
+  &[data-hidden="true"] {
+    display: none;
+  }
 `
 
 const ListBoxItemStyled = styled(ListBoxItem)`
