@@ -1,9 +1,9 @@
 import { Language } from '@components/styled/Language'
 import { useAppStore } from '@store/app'
 import { ChevronDown } from 'lucide-react'
+import { useState } from 'react'
 import { type Key, ListBox, SelectValue } from 'react-aria-components'
 import { useTranslation } from 'react-i18next'
-import { useState } from 'react'
 
 export const LanguageSelect = () => {
   const { setLocale } = useAppStore()
