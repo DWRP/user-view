@@ -48,20 +48,30 @@ export const Homepage = () => {
         </Header.Options>
       </Header.Root>
 
-      <Home.Controls>
-        <Search searchTerm={searchTerm} />
-        <Switch
-          id="view-toggle"
-          isSelected={isCardView}
-          onChange={setIsCardView}
-        >
-          <Label htmlFor="view-toggle">
-            {isCardView ? t('homepage.cardView') : t('homepage.tableView')}
-          </Label>
-        </Switch>
-      </Home.Controls>
+      <Home.Main>
+        <Home.Controls>
+          <Search searchTerm={searchTerm} />
+          <Switch
+            id="view-toggle"
+            isSelected={isCardView}
+            onChange={setIsCardView}
+            aria-label="toggle table button"
+          >
+            <Label htmlFor="view-toggle" aria-label="toggle table label">
+              {isCardView ? t('homepage.cardView') : t('homepage.tableView')}
+            </Label>
+          </Switch>
+        </Home.Controls>
 
-      {renderUserList()}
+        <Home.Content>{renderUserList()}</Home.Content>
+      </Home.Main>
+
+      <Home.Footer>
+        <p>
+          &copy; {new Date().getFullYear()} Douglas Pardim Dev. All rights
+          reserved.
+        </p>
+      </Home.Footer>
     </Home.Container>
   )
 }

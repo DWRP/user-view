@@ -70,7 +70,7 @@ describe('Home Component', () => {
         'justify-content',
         'space-between',
       )
-      expect(container.firstChild).toHaveStyleRule('align-items', 'flex-end')
+      expect(container.firstChild).toHaveStyleRule('align-items', 'flex-start')
       expect(container.firstChild).toHaveStyleRule('gap', '1rem')
       expect(container.firstChild).toHaveStyleRule('margin-bottom', '1.5rem')
     },
