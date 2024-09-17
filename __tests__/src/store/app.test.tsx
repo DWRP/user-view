@@ -34,7 +34,7 @@ describe('useAppStore', () => {
   test('deve iniciar com o estado padrão', () => {
     render(<HookTestComponent />)
     expect(screen.getByText(/Current theme: dark/i)).toBeInTheDocument()
-    expect(screen.getByText(/Current lang: not set/i)).toBeInTheDocument() // Mudado para "not set"
+    expect(screen.getByText(/Current lang: pt-BR/i)).toBeInTheDocument()
   })
 
   test('deve alterar o tema corretamente', () => {

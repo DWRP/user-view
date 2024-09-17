@@ -17,8 +17,9 @@ export const useAppStore = create(
   persist<AppState>(
     (set) => ({
       theme: 'dark',
-      lang: undefined,
+      lang: 'pt-BR',
       setTheme: (theme: Theme) => {
+        document.documentElement.setAttribute('data-theme', theme)
         set({ theme })
       },
       setLocale: (lang: Locale) => {
