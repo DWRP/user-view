@@ -1,0 +1,14 @@
+{
+  "homepage": {
+    "title": "User Directory",
+    "searchUsers": "Search Users",
+    "enterName": "Enter name...",
+    "cardView": "Card View",
+    "tableView": "Table View",
+    "table": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone"
+    }
+  }
+}

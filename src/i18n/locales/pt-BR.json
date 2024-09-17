@@ -1,0 +1,14 @@
+{
+  "homepage": {
+    "title": "Diretório de Usuários",
+    "searchUsers": "Pesquisar Usuários",
+    "enterName": "Digite o nome...",
+    "cardView": "Visão em Cartão",
+    "tableView": "Visão em Tabela",
+    "table": {
+      "name": "Nome",
+      "email": "E-mail",
+      "phone": "Telefone"
+    }
+  }
+}
